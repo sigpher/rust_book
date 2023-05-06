@@ -1,19 +1,38 @@
-use ch10::{get_largest, Point};
+use crate::lifetime::longest;
+use ch10::{notify, NewsArticle, Tweet};
+
+pub mod lifetime;
 
 fn main() {
-    let vec_char = vec!['x', 'a', 'c', 'h', 'z'];
-    let largest_char = get_largest(&vec_char);
-    println!("{}", largest_char);
+    let tweet = Tweet {
+        username: String::from("horse_ebooks"),
+        content: String::from("of course, as you probably already know, people"),
+        reply: false,
+        retweet: false,
+    };
 
-    let vec_number = vec![34, 50, 25, 100, 65];
-    let largest_number = get_largest(&vec_number);
-    println!("{largest_number}");
+    let article = NewsArticle {
+        headline: String::from("Penguins win the Stanley Cup Championship!"),
+        location: String::from("Pittsburgh, PA, USA"),
+        author: String::from("Iceburgh"),
+        content: String::from(
+            "The Pittsburgh Penguins once again are the best \
+        hockey team in the NHL.",
+        ),
+    };
 
-    let point1: Point<f32> = Point { x: 20.0, y: 10.0 };
-    let point2: Point<f32> = Point { x: -5.0, y: 10.0 };
+    let msg: String = notify(&tweet);
+    println!("{msg}");
+    let msg = notify(&article);
+    println!("{msg}");
+    let r = 10i32;
+    println!("r:{}", r);
 
-    println!("{:?}", point1);
-    println!("{:?}", point2);
-    println!("{}", &point1.distance_from_origin());
-    println!("{}", &point2.distance_from_origin());
+    let s1 = "abcd";
+    let s2 = "hi";
+    let longest = longest::longest(s1, s2);
+    println!("{}",longest);
+
+    let result =longest::longest_with_announcement("abcd","xyz","Today is someone's birthday!");
+    println!("The longest string is {}",result);
 }

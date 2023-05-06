@@ -34,7 +34,7 @@ fn main() {
     println!("{:?}", m);
 }
 
-fn word_counter(text: &str) -> HashMap<&str, u8> {
+pub fn word_counter(text: &str) -> HashMap<&str, u8> {
     let mut map = HashMap::new();
     // for word in text.split_whitespace(){
     //     let count = map.entry(word.to_string()).or_insert(0);
@@ -48,7 +48,7 @@ fn word_counter(text: &str) -> HashMap<&str, u8> {
     map
 }
 
-fn char_counter(text: &str) -> HashMap<char, u8> {
+pub  fn char_counter(text: &str) -> HashMap<char, u8> {
     let mut map = HashMap::new();
     text.chars().for_each(|ch| {
         map.entry(ch)
