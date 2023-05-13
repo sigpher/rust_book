@@ -15,6 +15,6 @@ members = [
     "ch13",
     "ch14",
     "ch15",
-    "closure",
-    "iterator",
+    "ch16",
+    "demo",
 ]

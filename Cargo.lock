@@ -75,7 +75,11 @@ name = "ch15"
 version = "0.1.0"
 
 [[package]]
-name = "closure"
+name = "ch16"
+version = "0.1.0"
+
+[[package]]
+name = "demo"
 version = "0.1.0"
 
 [[package]]
@@ -88,10 +92,6 @@ dependencies = [
  "libc",
  "wasi",
 ]
-
-[[package]]
-name = "iterator"
-version = "0.1.0"
 
 [[package]]
 name = "libc"
